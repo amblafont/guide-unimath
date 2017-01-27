@@ -91,3 +91,8 @@ This extends to dependent types.
 The trivial case is when `P` does not depend explicitely on its variable. In this case, `induction e` eliminates the transport (or the lemma `transport_const`)
 
 Coq is not very helpful when it comes to working with transports.
+
+## Limits / Colimits
+
+The files in UniMath.CategoryTheory.limits contains direct definitions of specific limits such as pushouts, pullbacks, (co)-equalizers.
+The files in UniMaths.CategoryTheory.limits.graphs redefine these limits/colimits in terms of diagrams of graphs, and the proofs that the definitions are equivalent.
