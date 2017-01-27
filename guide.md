@@ -67,8 +67,7 @@ The previous script replace the previous goal with `a ;; # F b ;; # F c ;; d = a
 
 I put an underscore to mark what is eliminated using this lemma, and the interrogation mark is what remains
 
-`cancel_postcomposition` : `? ;; _`
-
+`cancel_postcomposition` : `? ;; _`  
    What it means is suppose you have a goal `a ;; b = ?x` (because of a previous `etrans`). Then
    `apply cancel_postcomposition` will replace it with `a = ?y`
 
