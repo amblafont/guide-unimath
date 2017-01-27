@@ -2,6 +2,7 @@
 
 ## Global Notations
 `UU`
+
   Type.
   There is type in type in UniMaths, though it is known to be inconsistent.
   This allows to defined the squash `||A|| := forall (P:hProp), (A -> P) -> P` 
@@ -11,24 +12,34 @@
 Notations are usually redefined at the top of each file (as local)
 
 `C ⟦ a , b ⟧`
+
   Morphism between a and b in the category C
+
 `a ;; b`
+
   Composition of morphisms
+
 `# F a`
+
   Functor F applied to the morphism a
+
 `G □ F`
+
   Composition of functors
   
 ## Tactics
 
 `etrans`
+
   Transitivity of equality
   replace a goal `a=b` with two goals `a = ?x` and `?x = b`
   
 `use`
+
   enhanced `apply` (`use (f _ _)` means `refine (f _ _)`)
   
 `symmetry`
+
   DO NOT USE (it inserts a `match` in the proof term that does not fit UniMaths standard) ! instead use `eapply pathsinv0`
 
 ## Rewrite vs apply
@@ -57,10 +68,14 @@ The previous script replace the previous goal with `a ;; # F b ;; # F c ;; d = a
 I put an underscore to mark what is eliminated using this lemma, and the interrogation mark is what remains
 
 `cancel_postcomposition` : `? ;; _`
+
    What it means is suppose you have a goal `a ;; b = ?x` (because of a previous `etrans`). Then
    `apply cancel_postcomposition` will replace it with `a = ?y`
+
 `cancel_precomposition` : `_ ;; ?`
+
 `maponpaths` : `_ ?` (function application), `# _ ?` (functor on morphisms)
+
 `toforallpaths` : `? _` 
 
 Sometimes, the previous lemmas failed to apply because Coq does not succeed in guessing the right category. It can then be given explicitely : `apply (lemma (C:=precat))`
@@ -68,6 +83,7 @@ Sometimes, the previous lemmas failed to apply because Coq does not succeed in g
 
 ## Fun extensionality
 `funext`
+
 `funextsec` for the dependent version
 
 ## Equivalence of types
