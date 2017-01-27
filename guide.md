@@ -67,15 +67,12 @@ The previous script replace the previous goal with `a ;; # F b ;; # F c ;; d = a
 
 I put an underscore to mark what is eliminated using this lemma, and the interrogation mark is what remains
 
-`cancel_postcomposition` : `? ;; _`  
+* `cancel_postcomposition` : `? ;; _`  
    What it means is suppose you have a goal `a ;; b = ?x` (because of a previous `etrans`). Then
    `apply cancel_postcomposition` will replace it with `a = ?y`
-
-`cancel_precomposition` : `_ ;; ?`
-
-`maponpaths` : `_ ?` (function application), `# _ ?` (functor on morphisms)
-
-`toforallpaths` : `? _` 
+* `cancel_precomposition` : `_ ;; ?`
+* `maponpaths` : `_ ?` (function application), `# _ ?` (functor on morphisms)
+* `toforallpaths` : `? _` 
 
 Sometimes, the previous lemmas failed to apply because Coq does not succeed in guessing the right category. It can then be given explicitely : `apply (lemma (C:=precat))`
 
